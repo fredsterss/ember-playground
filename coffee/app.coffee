@@ -18,6 +18,8 @@ App.PostsRoute = Ember.Route.extend
 # in order to deeplink. Params is populated from
 # the route.
 App.PostRoute = Ember.Route.extend
+  # Can replace these models with AJAX requests. To
+  # remain async it supports .promises (ie. $.getJSON('url').then( massage data ))
   model: (params) ->
     posts.findBy 'id', params.post_id
 
