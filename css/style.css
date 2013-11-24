@@ -2,3 +2,8 @@
 html, body {
     margin: 20px;
 }
+
+/* Automatic currently active route */
+.active {
+  font-weight: bold;
+}
