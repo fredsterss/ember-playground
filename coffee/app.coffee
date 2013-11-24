@@ -36,6 +36,12 @@ App.PostController = Ember.ObjectController.extend
 Ember.Handlebars.helper 'format-date', (date) ->
   moment(date).fromNow()
 
+# Output markdown
+showdown = new Showdown.converter()
+Ember.Handlebars.helper 'format-markdown', (input) ->
+  # SafeString opts out of HTML escaping
+  new Handlebars.SafeString(showdown.makeHtml(input))
+
 # Dummy data
 posts = [
   id: "1"
